@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:ibilling/src/main/main_bottom_navigation.dart';
+import 'package:ibilling/router/router.dart';
 
 void main(List<String> args) {
-  runApp(const IBilling());
+  runApp(
+    IBilling(),
+  );
 }
 
-class IBilling extends StatelessWidget{
-  const IBilling({Key? key}) : super(key: key);
+class IBilling extends StatelessWidget {
+  IBilling({Key? key}) : super(key: key);
+  final route = RouteGenerator();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
-      initialRoute: "/",
-      home: const MainBottomNavigationPage(),
+      initialRoute: "/contracts",
+      onGenerateRoute: route.generateRoute,
     );
   }
 }
-
