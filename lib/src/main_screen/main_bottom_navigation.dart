@@ -28,12 +28,14 @@ class MainBottomNavigationPage extends StatelessWidget {
             label: 'New',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset("assets/bottom_bar_icons/saved_selected.png"),
+            icon: Image.asset("assets/bottom_bar_icons/saved_selected.png",),
             label: 'Saved',
+            
           ),
           BottomNavigationBarItem(
             icon: Image.asset("assets/bottom_bar_icons/profile_selected.png"),
             label: 'Profile',
+            
           ),
         ],
         
