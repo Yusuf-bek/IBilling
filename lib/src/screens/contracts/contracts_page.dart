@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ibilling/core/components/size_config/size_config.dart';
+import 'package:ibilling/core/constants/my_colors.dart';
+import 'package:ibilling/core/widgets/contract_status_widget.dart';
 import 'package:ibilling/core/widgets/contract_widget.dart';
 
 class ContractsPage extends StatelessWidget {
@@ -82,13 +84,72 @@ class ContractsPage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     if (index == 0) {
                       return Container(
-                        color: Colors.blue,
+                        color: Colors.black,
                         height: getHeight(85),
                         width: MediaQuery.of(context).size.width,
+                        margin: EdgeInsets.only(
+                          left: getWidth(16),
+                          right: getWidth(16),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                            top: getHeight(32),
+                            bottom: getHeight(8),
+                          ),
+                          child: Row(
+                            children: [
+                              InkWell(
+                                child: Container(
+                                  width: getWidth(92),
+                                  height: getHeight(33),
+                                  decoration: BoxDecoration(
+                                    color: MyColors.lightGreen,
+                                    borderRadius: BorderRadius.circular(6),
+                                  ),
+                                  child: const Center(
+                                    child: Text(
+                                      "Contracts",
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              InkWell(
+                                child: Container(
+                                  width: getWidth(92),
+                                  height: getHeight(33),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    borderRadius: BorderRadius.circular(6),
+                                  ),
+                                  child: const Center(
+                                    child: Text(
+                                      "Invoices",
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       );
                     }
 
-                    return ContractWidget(index: index, fish: "Ashrapova Nigina" ,amount:  "1,200,000 UZS",lastInvoice: 153, numberOfInvoices: 5,);
+                    return ContractWidget(
+                      index: index,
+                      fish: "Ashrapova Nigina",
+                      amount: "1,200,000 UZS",
+                      lastInvoice: 153,
+                      numberOfInvoices: 5,
+                      statusContainer: ContractStatusWidget.getWidget("rejectedPayme"),
+                    );
                   }),
             ),
           ),

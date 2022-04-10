@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ibilling/core/constants/my_colors.dart';
 
 abstract class MyTextStyles {
   MyTextStyles();
@@ -25,8 +26,18 @@ class ContractContainerTextStyles extends MyTextStyles {
   );
 
   static const TextStyle statusPaid = TextStyle(
-    color: Color(0xFF49B7A5),
+    color: MyColors.lightGreen,
     fontSize: 12,
+    fontWeight: FontWeight.w500,
+  );
+  static const TextStyle statusInProcess = TextStyle(
+    color: MyColors.inProcess,
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+  );
+  static const TextStyle statusRejected = TextStyle(
+    color: MyColors.rejectedBy,
+    fontSize: 14,
     fontWeight: FontWeight.w500,
   );
 

@@ -9,6 +9,7 @@ class ContractWidget extends StatelessWidget {
   String amount;
   int lastInvoice;
   int numberOfInvoices;
+  Container statusContainer;
   ContractWidget({
     Key? key,
     required this.index,
@@ -16,6 +17,7 @@ class ContractWidget extends StatelessWidget {
     required this.amount,
     required this.lastInvoice,
     required this.numberOfInvoices,
+    required this.statusContainer,
   }) : super(key: key);
 
   @override
@@ -57,20 +59,7 @@ class ContractWidget extends StatelessWidget {
           Positioned(
             right: getWidth(12),
             top: getHeight(12),
-            child: Container(
-              width: getWidth(49),
-              height: getHeight(21),
-              decoration: BoxDecoration(
-                color: MyColors.lightGreen.withOpacity(0.4),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: const Center(
-                child: Text(
-                  "Paid",
-                  style: ContractContainerTextStyles.statusPaid,
-                ),
-              ),
-            ),
+            child: statusContainer,
           ),
 
           // Date
@@ -98,8 +87,13 @@ class ContractWidget extends StatelessWidget {
                   ),
                   generateInfoRow(key: "Fish:", value: fish),
                   generateInfoRow(key: "Amount:", value: amount),
-                  generateInfoRow(key: "Last invoice:", value: "№ $lastInvoice",),
-                  generateInfoRow(key: "Number of invoices:", value: numberOfInvoices.toString()),
+                  generateInfoRow(
+                    key: "Last invoice:",
+                    value: "№ $lastInvoice",
+                  ),
+                  generateInfoRow(
+                      key: "Number of invoices:",
+                      value: numberOfInvoices.toString()),
                 ],
               ),
             ),
