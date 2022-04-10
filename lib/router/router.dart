@@ -1,0 +1,4 @@
+class GenerateRoute{
+  GenerateRoute();
+  
+}
