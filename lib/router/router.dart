@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ibilling/src/general_screens/filter_page.dart';
+import 'package:ibilling/src/general_screens/search_screen.dart';
 import 'package:ibilling/src/main_screen/main_bottom_navigation.dart';
 import 'package:ibilling/src/screens/contracts/contracts_page.dart';
 import 'package:ibilling/src/screens/create/create_page.dart';
@@ -18,12 +20,12 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (context) => ContractsPage(),
         );
-      
+
       case "/history":
         return MaterialPageRoute(
           builder: (context) => HistoryPage(),
         );
-      
+
       case "/create":
         return MaterialPageRoute(
           builder: (context) => CreatePage(),
@@ -33,10 +35,20 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (context) => SavedPage(),
         );
-      
+
       case "/profile":
         return MaterialPageRoute(
           builder: (context) => ProfilePage(),
+        );
+
+      case "/search":
+        return MaterialPageRoute(
+          builder: (context) => SearchPage(),
+        );
+
+      case "/filter":
+        return MaterialPageRoute(
+          builder: (context) => FilterPage(),
         );
     }
     return null;
