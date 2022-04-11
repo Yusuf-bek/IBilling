@@ -16,7 +16,7 @@ class IBilling extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
-      initialRoute: "/history",
+      initialRoute: "/saved",
       onGenerateRoute: route.generateRoute,
     );
   }
