@@ -13,6 +13,7 @@ class ContractsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
+      
       body: SafeArea(
         child: Column(
           children: [
@@ -163,6 +164,7 @@ class ContractsPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  // Leading circle and title
                   SizedBox(
                     width: getWidth(116),
                     height: getHeight(24),
@@ -175,13 +177,7 @@ class ContractsPage extends StatelessWidget {
                           decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             gradient: LinearGradient(
-                              colors: [
-                                Color(0xFF00FFC2),
-                                Color(0xFF0500FF),
-                                Color(0xFFFFC700),
-                                Color(0xFFAD00FF),
-                                Color(0xFF00FF94),
-                              ],
+                              colors: MyColors.contractPageAppbarCircleList,
                             ),
                           ),
                         ),
@@ -195,6 +191,7 @@ class ContractsPage extends StatelessWidget {
                       ],
                     ),
                   ),
+                  // Search and filter buttons
                   SizedBox(
                     width: getWidth(80),
                     height: getHeight(20),

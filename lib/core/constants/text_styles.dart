@@ -59,3 +59,32 @@ class ContractContainerTextStyles extends MyTextStyles {
     fontWeight: FontWeight.w400,
   );
 }
+
+class FilterPageTextStyles extends MyTextStyles {
+  static const TextStyle cancelButton = TextStyle(
+    fontSize: 14,
+    color: MyColors.darkGreen,
+    fontWeight: FontWeight.w500,
+  );
+  static const TextStyle applyFiltersButton = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+  );
+
+  static const TextStyle headLineStatusDate = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w700,
+    color: MyColors.grey,
+  );
+
+  static const TextStyle date = TextStyle(
+    color: MyColors.grey,
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+  );
+
+  static const TextStyle tickBoxTypeText = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+  );
+}
