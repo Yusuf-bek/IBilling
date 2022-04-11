@@ -88,3 +88,7 @@ class FilterPageTextStyles extends MyTextStyles {
     fontWeight: FontWeight.w500,
   );
 }
+
+class ProfilePagePersonInfoStyles extends MyTextStyles {
+  static const TextStyle sdf = TextStyle();
+}

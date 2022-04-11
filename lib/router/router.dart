@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:ibilling/src/general_screens/filter_page.dart';
-import 'package:ibilling/src/general_screens/search_screen.dart';
-import 'package:ibilling/src/main_screen/main_bottom_navigation.dart';
-import 'package:ibilling/src/screens/contracts/contracts_page.dart';
-import 'package:ibilling/src/screens/create/create_page.dart';
-import 'package:ibilling/src/screens/history/history_page.dart';
-import 'package:ibilling/src/screens/profile/profile_page.dart';
-import 'package:ibilling/src/screens/saved/saved_page.dart';
+import 'package:ibilling/view/general_screens/filter_page.dart';
+import 'package:ibilling/view/general_screens/search_screen.dart';
+import 'package:ibilling/view/main_screen/main_bottom_navigation.dart';
+import 'package:ibilling/view/screens/contracts/contracts_page.dart';
+import 'package:ibilling/view/screens/create/create_page.dart';
+import 'package:ibilling/view/screens/history/history_page.dart';
+import 'package:ibilling/view/screens/profile/profile_page.dart';
+import 'package:ibilling/view/screens/saved/saved_page.dart';
 
 class RouteGenerator {
   Route? generateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case "/":
         return MaterialPageRoute(
-          builder: ((context) => const MainBottomNavigationPage()),
+          builder: ((context) =>  MainBottomNavigationPage()),
         );
 
       case "/contracts":
