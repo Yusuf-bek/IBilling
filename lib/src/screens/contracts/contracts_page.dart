@@ -4,21 +4,22 @@ import 'package:ibilling/core/components/size_config/size_config.dart';
 import 'package:ibilling/core/constants/my_colors.dart';
 import 'package:ibilling/core/widgets/contract_status_widget.dart';
 import 'package:ibilling/core/widgets/contract_widget.dart';
+import 'package:ibilling/core/widgets/general_app_bar.dart';
 
 class ContractsPage extends StatelessWidget {
-  bool hasDataSimulation = false;
+  bool hasDataSimulation = true;
   ContractsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      
       body: SafeArea(
         child: Column(
           children: [
             // Appbar
-            getAppbar(context),
+            GeneralAppBar(title: "Contracts",),
+
             // Calendar
             Container(
               width: MediaQuery.of(context).size.width,
@@ -142,87 +143,14 @@ class ContractsPage extends StatelessWidget {
                     )
                   : Container(
                       color: Colors.black,
-                      child:
-                          Center(child: Image.asset("assets/nocontracts.png")),
+                      child: Center(
+                        child: Image.asset("assets/nocontracts.png"),
+                      ),
                     ),
             ),
           ],
         ),
       ),
     );
-  }
-
-  Container getAppbar(BuildContext context) {
-    return Container(
-            width: MediaQuery.of(context).size.width,
-            height: getHeight(51),
-            color: Colors.black,
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: getWidth(20),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // Leading circle and title
-                  SizedBox(
-                    width: getWidth(116),
-                    height: getHeight(24),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: getWidth(24),
-                          height: getWidth(24),
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            gradient: LinearGradient(
-                              colors: MyColors.contractPageAppbarCircleList,
-                            ),
-                          ),
-                        ),
-                        const Text(
-                          "Contracts",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  // Search and filter buttons
-                  SizedBox(
-                    width: getWidth(80),
-                    height: getHeight(20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            Navigator.pushNamed(context, "/filter");
-                          },
-                          child: Image.asset(
-                            "assets/app_bar_icons/filter.png",
-                            color: Colors.white,
-                          ),
-                        ),
-                        Image.asset("assets/app_bar_icons/line.png"),
-                        InkWell(
-                          onTap: () {
-                            Navigator.pushNamed(context, "/search");
-                          },
-                          child: Image.asset(
-                            "assets/app_bar_icons/search.png",
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          );
   }
 }
